@@ -1,0 +1,59 @@
+.card {
+    border-radius: 10px;
+    background-color: rgb(162, 226, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  .container-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 96vw;
+    max-width: 500px;
+  }
+  
+  .child-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .buttons button {
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: rgb(255, 145, 0);
+    margin: 2px;
+    width: 80px;
+  }
+
+  .previous {
+    border-radius: 50% 0 0 50%;
+  }
+
+  .next {
+    border-radius: 0 50% 50% 0;
+  }
+
+  .line {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 50px;
+  }
+
+  .child-page a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(8, 164, 237);
+    border-radius: 5px;
+    margin: 10px;
+  }

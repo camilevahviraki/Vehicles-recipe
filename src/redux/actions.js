@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { response } from 'express';
 
 const GET_BY_YEAR = 'vehicles-recipe/src/redux/GET_BY_YEAR';
 const GET_BY_MODEL = 'vehicles-recipe/src/redux/GET_BY_MODEL';
@@ -30,6 +31,8 @@ const getModelByMakeId = '/vehicles/GetModelsForMakeIdYear/makeId/474/modelyear/
 const getByVariablesList = '/vehicles/GetVehicleVariableList?format=json';
 const getCanadians = '/vehicles/GetCanadianVehicleSpecifications/?year=2011&make=Acura&format=json';
 
+const GET_SEARCHED_MODEL = '/src/redux/GET_SEARCHED_MODEL';
+
 export default function vehiclesReducer(state = [], action) {
   switch (action.type) {
     case GET_BY_MODEL:
@@ -60,6 +63,14 @@ export default function vehiclesReducer(state = [], action) {
       return action.data.Results;
     case GET_CANADIAN:
       return action.data.Results;
+    case GET_SEARCHED_MODEL: {
+      let result = [];
+      const url = `https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/${action.model}?format=json`;
+      axios.get(url).then((response) => {
+        result = response.data.Results;
+      });
+      return result;
+    }
     default:
       return state;
   }
@@ -178,3 +189,5 @@ export const VehicleCanadians = () => (dispatch) => {
       dispatch({ type: GET_CANADIAN, data });
     });
 };
+
+export const getSearchedModel = (model) => ({ type: GET_SEARCHED_MODEL, model });

@@ -9,7 +9,9 @@ function GetByModelForMake({ getVehiclesData }) {
   }, []);
 
   return (
-    <div>getByModelForMake</div>
+    <div>
+      <Link to="../">Home</Link>
+    </div>
   );
 }
 
