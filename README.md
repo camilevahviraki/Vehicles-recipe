@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live link
 
-See the [live demo](vehicles-cathalogue.netlify.app) of my Car's App.
+See the [live demo](https://vehicles-cathalogue.netlify.app) of my Car's App.
 
 
  ## 👤 Author
