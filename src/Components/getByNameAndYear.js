@@ -80,6 +80,7 @@ function GetByNameAndYear({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({ getVehiclesData: (year) => dipatch(VehicleByNameAndYear(year)) });
+const mapDispatchToProps = (dipatch) => ({
+  getVehiclesData: (year) => dipatch(VehicleByNameAndYear(year)) });
 
 export default connect(null, mapDispatchToProps)(GetByNameAndYear);

@@ -80,7 +80,7 @@ function GetCanadians({ getVehiclesData }) {
 }
 
 const mapDispatchToProps = (dipatch) => ({
-  getVehiclesData: (type) => dipatch(VehicleCanadians(type))
+  getVehiclesData: (type) => dipatch(VehicleCanadians(type)),
 });
 
 export default connect(null, mapDispatchToProps)(GetCanadians);

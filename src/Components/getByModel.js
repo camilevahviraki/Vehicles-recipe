@@ -80,6 +80,7 @@ function GetByModel({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({ getVehiclesData: (model) => dipatch(VehicleByModel(model)) });
+const mapDispatchToProps = (dipatch) => ({
+  getVehiclesData: (model) => dipatch(VehicleByModel(model)) });
 
 export default connect(null, mapDispatchToProps)(GetByModel);

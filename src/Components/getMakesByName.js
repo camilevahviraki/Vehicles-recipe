@@ -83,8 +83,8 @@ function GetMakesByName({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({ 
-  getVehiclesData: (name) => dipatch(VehicleMakesByName(name))
+const mapDispatchToProps = (dipatch) => ({
+  getVehiclesData: (name) => dipatch(VehicleMakesByName(name)),
 });
 
 export default connect(null, mapDispatchToProps)(GetMakesByName);

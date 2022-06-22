@@ -80,6 +80,7 @@ function GetByTypesForMake({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({ getVehiclesData: (type) => dipatch(VehicleByTypesForMake(type)) });
+const mapDispatchToProps = (dipatch) => ({
+  getVehiclesData: (type) => dipatch(VehicleByTypesForMake(type)) });
 
 export default connect(null, mapDispatchToProps)(GetByTypesForMake);
