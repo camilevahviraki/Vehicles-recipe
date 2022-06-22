@@ -1,7 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Vehicles App
 
-![](./public/mobile-black(1).png)  ![](./public/mobile-black(2).png)
+<div style="display: flex">
+    <img src="./public/mobile-black(1).png" alt="" style="width: 40%; margin-right: 10%"/>
+    <img src="./public/mobile-black(2).png" alt="" style="width: 40%"/>
+</div>
 
 ## Built With
 
