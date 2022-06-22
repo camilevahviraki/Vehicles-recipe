@@ -2,7 +2,8 @@
 # Vehicles App
 
 <div style="display: flex">
-    <img src="./public/mobile-black(1).png" alt="" style="width: 40%; margin-right: 10%"/>
+    <img src="./public/mobile-black(1).png" alt="" style="width: 40%"/>
+    <span style="width: 15%"></span>
     <img src="./public/mobile-black(2).png" alt="" style="width: 40%"/>
 </div>
 
