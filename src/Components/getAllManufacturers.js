@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCoffee, faCar, faCarBattery, faCarAlt, faCarSide,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCar } from '@fortawesome/free-solid-svg-icons';
 import { VehicleAllManufacturers } from '../redux/actions';
+import carImg from '../images/car-tire.png';
 import '../styles/childPages.css';
 
 function GetAllManufacturers({ getVehiclesData }) {
@@ -25,11 +24,13 @@ function GetAllManufacturers({ getVehiclesData }) {
   return (
     <div className="child-page">
       <Link to="../">Home</Link>
+      <img src={carImg} alt="" className="big-car-img" />
       <div className="line" />
+      <h2>All manufacturers</h2>
       <section className="container-cards">
         {vehicles.slice((page * 20), ((page + 1) * 20)).map((vehicle) => (
           <article key={vehicle.Mfr_ID} className="card">
-            <FontAwesomeIcon icon={faCar} />
+            <FontAwesomeIcon style={{ margin: '10px' }} icon={faCar} />
             <h3>{vehicle.Mfr_CommonName}</h3>
             <p>{vehicle.Country}</p>
             <p>{vehicle.Mfr_Name}</p>

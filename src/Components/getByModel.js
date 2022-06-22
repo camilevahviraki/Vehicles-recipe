@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCarSide } from '@fortawesome/free-solid-svg-icons';
+import carImg from '../images/black-car10.png';
 import { VehicleByModel } from '../redux/actions';
 
 function GetByModel({ getVehiclesData }) {
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState('');
-  const dispatch = useDispatch();
   let numPages = 0;
   useEffect(() => {
-    getVehiclesData();
+    getVehiclesData('honda');
   }, []);
   const vehicles = useSelector((state) => state.vehiclesReducer);
   const numOfpages = Math.floor(vehicles.length / 20);
@@ -23,15 +23,22 @@ function GetByModel({ getVehiclesData }) {
 
   const dropvalue = (e) => {
     setSearch(e.target.value);
+  };
 
-    console.log(search);
+  const submitUrl = (e) => {
+    if (e.keyCode === 13 && search.length > 0) {
+      console.log('enter pressed', search);
+      getVehiclesData(search);
+    }
   };
 
   return (
     <div className="child-page">
       <Link to="../">Home</Link>
+      <img src={carImg} alt="" className="big-car-img" />
       <div className="line" />
-      <input type="search" onChange={dropvalue} />
+      <h2>Vehicles Models</h2>
+      <input type="search" onChange={dropvalue} onKeyDown={submitUrl} placeholder="...search" />
       <section className="container-cards">
         {vehicles.slice((page * 20), ((page + 1) * 20)).map((vehicle) => (
           <article key={vehicles.indexOf(vehicle)} className="card">
@@ -73,6 +80,6 @@ function GetByModel({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({ getVehiclesData: () => dipatch(VehicleByModel()) });
+const mapDispatchToProps = (dipatch) => ({ getVehiclesData: (model) => dipatch(VehicleByModel(model)) });
 
 export default connect(null, mapDispatchToProps)(GetByModel);

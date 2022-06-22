@@ -28,6 +28,7 @@
       "react/self-closing-comp": "off",
       "react/prefer-stateless-function": "off",
       "react/no-access-state-in-setstate": "off",
+      "no-unused-expressions": "off",
       "no-shadow": "off"
     },
     "ignorePatterns": [

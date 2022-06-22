@@ -13,11 +13,6 @@ import GetByTypesForMake from './Components/getByTypesForMake';
 import GetByYear from './Components/getByYear';
 import GetCanadians from './Components/getCanadians';
 import GetMakesByName from './Components/getMakesByName';
-import GetModelByMakeId from './Components/getModelByMakeId';
-import GetTypeByName from './Components/getTypeByName';
-import GetVariablesList from './Components/getVariablesList';
-import GetVariablesValues from './Components/getVariablesValues';
-import GetVehicleByParts from './Components/getVehicleByParts';
 import Home from './Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,11 +30,6 @@ root.render(
         <Route path="GetByYear" element={<GetByYear />} />
         <Route path="GetCanadians" element={<GetCanadians />} />
         <Route path="GetMakesByName" element={<GetMakesByName />} />
-        <Route path="GetVariablesList" element={<GetVariablesList />} />
-        <Route path="GetVariablesValues" element={<GetVariablesValues />} />
-        <Route path="GetVehicleByParts" element={<GetVehicleByParts />} />
-        <Route path="GetModelByMakeId" element={<GetModelByMakeId />} />
-        <Route path="GetTypeByName" element={<GetTypeByName />} />
       </Routes>
     </BrowserRouter>
   </Provider>,
