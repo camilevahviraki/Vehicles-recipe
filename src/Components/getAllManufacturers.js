@@ -49,7 +49,7 @@ function GetAllManufacturers({ getVehiclesData }) {
           className="previous"
           type="button"
           onClick={() => {
-            page <= 0 ? setPage(numOfpages) : setPage(page - 1);
+            if (page <= 0) { setPage(numOfpages); } setPage(page - 1);
           }}
         >
           previous
@@ -58,7 +58,7 @@ function GetAllManufacturers({ getVehiclesData }) {
           className="next"
           type="button"
           onClick={() => {
-            page >= numOfpages ? setPage(0) : setPage(page + 1);
+            if (page >= numOfpages) { setPage(0); } setPage(page + 1);
           }}
         >
           next page

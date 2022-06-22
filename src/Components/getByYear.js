@@ -60,7 +60,7 @@ function GetByYear({ getVehiclesData }) {
           className="previous"
           type="button"
           onClick={() => {
-            page <= 0 ? setPage(numOfpages) : setPage(page - 1);
+            if (page <= 0) { setPage(numOfpages); } setPage(page - 1);
           }}
         >
           previous
@@ -69,7 +69,7 @@ function GetByYear({ getVehiclesData }) {
           className="next"
           type="button"
           onClick={() => {
-            page >= numOfpages ? setPage(0) : setPage(page + 1);
+            if (page >= numOfpages) { setPage(0); } setPage(page + 1);
           }}
         >
           next page
@@ -79,7 +79,6 @@ function GetByYear({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({
-  getVehiclesData: (year) => dipatch(VehicleByYear(year)) });
+const mapDispatchToProps = (dipatch) => ({ getVehiclesData: (year) => dipatch(VehicleByYear(year)) });
 
 export default connect(null, mapDispatchToProps)(GetByYear);

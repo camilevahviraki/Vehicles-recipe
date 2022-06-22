@@ -27,7 +27,6 @@ function GetByName({ getVehiclesData }) {
 
   const submitUrl = (e) => {
     if (e.keyCode === 13 && search.length > 0) {
-      console.log('enter pressed', search);
       getVehiclesData(search);
     }
   };
@@ -61,7 +60,7 @@ function GetByName({ getVehiclesData }) {
           className="previous"
           type="button"
           onClick={() => {
-            page <= 0 ? setPage(numOfpages) : setPage(page - 1);
+            if (page <= 0) { setPage(numOfpages); } setPage(page - 1);
           }}
         >
           previous
@@ -70,7 +69,7 @@ function GetByName({ getVehiclesData }) {
           className="next"
           type="button"
           onClick={() => {
-            page >= numOfpages ? setPage(0) : setPage(page + 1);
+            if (page >= numOfpages) { setPage(0); } setPage(page + 1);
           }}
         >
           next page
@@ -80,7 +79,6 @@ function GetByName({ getVehiclesData }) {
   );
 }
 
-const mapDispatchToProps = (dipatch) => ({
-  getVehiclesData: (name) => dipatch(VehicleByName(name)) });
+const mapDispatchToProps = (dipatch) => ({ getVehiclesData: (name) => dipatch(VehicleByName(name)) });
 
 export default connect(null, mapDispatchToProps)(GetByName);
