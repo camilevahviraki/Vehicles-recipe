@@ -28,6 +28,8 @@ To get a local copy up and running follow these simple example steps.
 
 See the [live demo](https://vehicles-cathalogue.netlify.app) of my Car's App.
 
+or [view the video of explaning the project](https://www.loom.com/share/7f44f6fdad8d4324884d7f2aeb1fa4a6)
+
 
  ## 👤 Author
 
