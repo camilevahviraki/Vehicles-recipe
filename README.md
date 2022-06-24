@@ -52,5 +52,5 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Inspiration: Microverse
-- React
+- Nelson Sakwa 
 - etc
