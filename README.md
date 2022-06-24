@@ -52,5 +52,5 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Inspiration: Microverse
-- Nelson Sakwa 
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 - etc
